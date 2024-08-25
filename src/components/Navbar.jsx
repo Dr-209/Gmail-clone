@@ -27,7 +27,7 @@ const Navbar = () => {
   }
   useEffect(() => {
     dispatch(setSearchText(search));
-  }, [search]);
+  }, [search]);  //jyare search karsu tyare change thase everytime
 
 
   return (
@@ -75,7 +75,7 @@ const Navbar = () => {
                     exit={{ opacity: 0, scale: 0.8 }}
                     transition={{ duration: 0.1 }}
                     className='absolute right-2 z-20 shadow-lg bg-white rounded-md'>
-                    <p onClick={signOutHandler} className='p-2 underline'>LogOut</p>
+                    <p onClick={signOutHandler} className='p-3 m-2  border-red-700  border-2 font-semibold text-red-600 underline bg-gray-100'>LogOut</p>
                   </motion.div>
                 )
               }

@@ -7,16 +7,18 @@ import { setEmails } from '../redux/appSlice';
 
 const Messages = () => {
   const { searchText, emails } = useSelector(store => store.app);
-  const [filterEmail, setFilterEmail] = useState(emails);
+  const [filterEmail, setFilterEmail] = useState(emails);  //search karsu tyre bija email na jata re ena mate  //like DSA na kariye original value change na thay aena mate
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const q = query(collection(db, "emails"), orderBy('createdAt', 'desc'));
+    const q = query(collection(db, "emails"), orderBy('createdAt', 'desc')); //sorting
     const unsubscribe = onSnapshot(q, (snapshot) => {
       const allEmails = snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
       dispatch(setEmails(allEmails));
     });
  
+
+    //cleanup
     return () => unsubscribe(); // Cleanup function to unsubscribe when component unmounts
   }, []);
 

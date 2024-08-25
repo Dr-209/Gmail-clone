@@ -19,7 +19,7 @@ const SendEmail = () => {
     }
 
     const submitHandler = async (e) => {
-        e.preventDefault();
+        e.preventDefault();  
         await addDoc(collection(db, "emails"), {
             to: formData.recipients,
             subject: formData.subject,

@@ -6,7 +6,7 @@ const appSlice = createSlice({
         open: false,
         selectedMail: null,
         searchText: "",
-        emails: null, // This might need to be initialized as an array or object depending on your application logic
+        emails: null, 
         authUser: null
     },
     reducers: {
